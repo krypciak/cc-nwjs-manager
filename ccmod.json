@@ -1,0 +1,16 @@
+{
+    "id": "cc-nwjs-manager",
+    "version": "0.0.1",
+    "title": "NW.js manager",
+    "description": "Automaticly install or change the NW.js version",
+    "repository": "https://github.com/krypciak/cc-nwjs-manager",
+    "tags": ["dev", "library"],
+    "authors": "krypek",
+    "icons": {
+        "24": "icon/icon.png"
+    },
+    "dependencies": {
+        "ccmodmanager": ">=0.9.12"
+    },
+    "plugin": "plugin.js"
+}
