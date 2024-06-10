@@ -2,11 +2,11 @@
 
 # Automatic NW.js versions downloader and installer for CrossCode
 
-## Screenshot
+![image](https://github.com/krypciak/cc-nwjs-manager/assets/115574014/b076dcb4-6b9d-4634-86b6-538490ef4ac7)
 
 ### Api
 
-```javscript
+```javascript
 sc.nwjsManager.install('0.35.5', /* sdk */ true)
 sc.nwjsManager.install('0.72.0', /* not sdk */ false)
 ```
