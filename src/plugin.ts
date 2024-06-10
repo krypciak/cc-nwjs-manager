@@ -40,7 +40,6 @@ export default class CCNwjsManager implements PluginClass {
 
     prestart(): void | Promise<void> {
         registerOpts(this)
-        console.log(process.versions.nw)
     }
 
     poststart(): void | Promise<void> {}
@@ -89,11 +88,11 @@ export default class CCNwjsManager implements PluginClass {
         const archivePath = `${CCNwjsManager.baseDataPath}/${archiveName}`
 
         if (!(await doesFileExist(archivePath))) {
-            console.log('downloading')
+            console.log(`Downloading NW.js: ${url}`)
             const data = await (await fetch(url)).arrayBuffer()
-            console.log('saving to ', archivePath)
+            console.log(`Saving the NW.js archive to ${archivePath}`)
             await fs.promises.writeFile(archivePath, Buffer.from(data)).then(() => {
-                console.log('file written to', archivePath)
+                console.log(`NW.js archive saved to ${archivePath}`)
             })
         }
 
@@ -101,6 +100,11 @@ export default class CCNwjsManager implements PluginClass {
 
         if (extension == 'zip') {
             if (platform == 'win') {
+                await this.spawnWindowsScript(`Expand-Archive -Force ${archivePath} .`)
+                const directoryName = archiveName.substring(0, archiveName.length - '.zip'.length)
+                this.spawnWindowsScript(
+                    `cp -r -Force ${directoryName}\\* .; rm -r ${directoryName}; cp nw.exe CrossCode.exe; start ${crosscodePath}`
+                )
             } else throw new Error('what')
         } else if (extension == 'tar.gz') {
             if (platform == 'linux') {
@@ -121,6 +125,16 @@ export default class CCNwjsManager implements PluginClass {
 
         return new Promise<void>(resolve => {
             const child = cp.spawn('sh', ['-c', `${cmd}`])
+            child.unref()
+            child.on('exit', resolve)
+        })
+    }
+
+    private async spawnWindowsScript(cmd: string) {
+        const cp: typeof import('child_process') = require('child_process')
+
+        return new Promise<void>(resolve => {
+            const child = cp.exec(`powershell -command "${cmd.replace('/', '//').replace('\\', '\\\\')}"`)
             child.unref()
             child.on('exit', resolve)
         })

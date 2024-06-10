@@ -39,6 +39,7 @@ export function registerOpts(nwjsManager: CCNwjsManager) {
                         type: 'BUTTON',
 
                         onPress() {
+                            sc.Dialogs.showInfoDialog('NW.js will now download and install automaticly. Please wait...')
                             const opts = sc.modMenu.options['cc-nwjs-manager']
                             const version = versions[opts.version]
                             nwjsManager.install(version, opts.sdk)
