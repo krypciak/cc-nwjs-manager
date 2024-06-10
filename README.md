@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD013 MD024 MD001 MD045 -->
 
-# NW.js version automatic downloader and installer for CrossCode
+# Automatic NW.js versions downloader and installer for CrossCode
 
 ## Screenshot
 
