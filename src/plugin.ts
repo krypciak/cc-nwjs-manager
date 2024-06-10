@@ -111,7 +111,7 @@ export default class CCNwjsManager implements PluginClass {
                 await this.spawnLinuxScript(`tar xf "${archivePath}" --directory=.`)
                 const directoryName = archiveName.substring(0, archiveName.length - '.tar.gz'.length)
                 this.spawnLinuxScript(
-                    `sleep 3 && cp -rf ./${directoryName}/* . && rm -rf ./${directoryName} && ${crosscodePath}`
+                    `sleep 3 && cp -rf ./${directoryName}/* . && rm -rf ./${directoryName} && cp ./nw ./CrossCode && ${crosscodePath}`
                 )
             } else throw new Error('what')
         }
