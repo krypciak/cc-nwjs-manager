@@ -15,4 +15,5 @@ export default class CCNwjsManager implements PluginClass {
     private getUrl;
     install(version: string, sdk: boolean): Promise<void>;
     private spawnLinuxScript;
+    private spawnWindowsScript;
 }
