@@ -25,7 +25,7 @@ importers:
         version: 6.21.0(eslint@8.57.0)(typescript@5.4.2)
       ccmodmanager:
         specifier: github:CCDirectLink/CCModManager
-        version: https://codeload.github.com/CCDirectLink/CCModManager/tar.gz/ab30cbacd653d45d2922da9d399c8197c5d1ac1d
+        version: https://codeload.github.com/CCDirectLink/CCModManager/tar.gz/c74a5e17cfbfba3d3ba156d4520d0181a0a8a104
       esbuild:
         specifier: ^0.20.0
         version: 0.20.1
@@ -357,9 +357,9 @@ packages:
     resolution: {integrity: sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==}
     engines: {node: '>=6'}
 
-  ccmodmanager@https://codeload.github.com/CCDirectLink/CCModManager/tar.gz/ab30cbacd653d45d2922da9d399c8197c5d1ac1d:
-    resolution: {tarball: https://codeload.github.com/CCDirectLink/CCModManager/tar.gz/ab30cbacd653d45d2922da9d399c8197c5d1ac1d}
-    version: 0.9.11
+  ccmodmanager@https://codeload.github.com/CCDirectLink/CCModManager/tar.gz/c74a5e17cfbfba3d3ba156d4520d0181a0a8a104:
+    resolution: {tarball: https://codeload.github.com/CCDirectLink/CCModManager/tar.gz/c74a5e17cfbfba3d3ba156d4520d0181a0a8a104}
+    version: 0.9.13
 
   chalk@4.1.2:
     resolution: {integrity: sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==}
@@ -1008,7 +1008,7 @@ snapshots:
 
   callsites@3.1.0: {}
 
-  ccmodmanager@https://codeload.github.com/CCDirectLink/CCModManager/tar.gz/ab30cbacd653d45d2922da9d399c8197c5d1ac1d: {}
+  ccmodmanager@https://codeload.github.com/CCDirectLink/CCModManager/tar.gz/c74a5e17cfbfba3d3ba156d4520d0181a0a8a104: {}
 
   chalk@4.1.2:
     dependencies:

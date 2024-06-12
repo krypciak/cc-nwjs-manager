@@ -1,7 +1,7 @@
 import type { Options } from 'ccmodmanager/types/mod-options'
 import CCNwjsManager from './plugin'
 
-export let Opts: ReturnType<typeof sc.modMenu.registerAndGetModOptions<ReturnType<typeof registerOpts>>>
+export let Opts: ReturnType<typeof modmanager.registerAndGetModOptions<ReturnType<typeof registerOpts>>>
 
 import versions from './versions.json'
 
@@ -40,7 +40,7 @@ export function registerOpts(nwjsManager: CCNwjsManager) {
 
                         onPress() {
                             sc.Dialogs.showInfoDialog('NW.js will now download and install automaticly. Please wait...')
-                            const opts = sc.modMenu.options['cc-nwjs-manager']
+                            const opts = modmanager.options['cc-nwjs-manager']
                             const version = versions[opts.version]
                             nwjsManager.install(version, opts.sdk)
                         },
@@ -52,7 +52,7 @@ export function registerOpts(nwjsManager: CCNwjsManager) {
         },
     } as const satisfies Options
 
-    Opts = sc.modMenu.registerAndGetModOptions(
+    Opts = modmanager.registerAndGetModOptions(
         {
             modId: 'cc-nwjs-manager',
             title: 'NW.js manager',

@@ -1,5 +1,5 @@
-import { PluginClass } from 'ultimate-crosscode-typedefs/modloader/mod'
-import type { Mod1 } from 'ccmodmanager/src/types'
+import type { PluginClass } from 'ultimate-crosscode-typedefs/modloader/mod'
+import type { Mod1 } from 'ccmodmanager/types/types'
 import { registerOpts } from './options'
 
 async function doesFileExist(path: string): Promise<boolean> {

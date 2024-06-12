@@ -10,7 +10,7 @@
         "24": "icon/icon.png"
     },
     "dependencies": {
-        "ccmodmanager": ">=0.9.12"
+        "ccmodmanager": ">=0.9.13"
     },
     "plugin": "plugin.js"
 }
