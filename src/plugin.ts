@@ -14,9 +14,7 @@ async function doesFileExist(path: string): Promise<boolean> {
 const fs: typeof import('fs') = (0, eval)("require('fs')")
 
 declare global {
-    namespace sc {
-        var nwjsManager: CCNwjsManager
-    }
+    var nwjsManager: CCNwjsManager
 }
 
 export default class CCNwjsManager implements PluginClass {
@@ -34,8 +32,7 @@ export default class CCNwjsManager implements PluginClass {
 
         fs.promises.mkdir(CCNwjsManager.baseDataPath, { recursive: true })
 
-        window.sc ??= {} as any
-        sc.nwjsManager = this
+        window.nwjsManager = this
     }
 
     prestart(): void | Promise<void> {
