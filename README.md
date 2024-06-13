@@ -2,7 +2,7 @@
 
 # Automatic NW.js versions downloader and installer for CrossCode
 
-![image](https://github.com/krypciak/cc-nwjs-manager/assets/115574014/b076dcb4-6b9d-4634-86b6-538490ef4ac7)
+![Screenshot of the mod's options page](https://github.com/krypciak/cc-nwjs-manager/assets/115574014/b076dcb4-6b9d-4634-86b6-538490ef4ac7)
 
 ### Api
 
