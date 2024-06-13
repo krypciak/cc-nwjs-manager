@@ -1,5 +1,5 @@
 import CCNwjsManager from './plugin';
-export declare let Opts: ReturnType<typeof sc.modMenu.registerAndGetModOptions<ReturnType<typeof registerOpts>>>;
+export declare let Opts: ReturnType<typeof modmanager.registerAndGetModOptions<ReturnType<typeof registerOpts>>>;
 export declare function registerOpts(nwjsManager: CCNwjsManager): {
     readonly general: {
         readonly settings: {

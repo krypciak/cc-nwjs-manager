@@ -1,6 +1,9 @@
 import type { PluginClass } from 'ultimate-crosscode-typedefs/modloader/mod'
 import type { Mod1 } from 'ccmodmanager/types/types'
-import { registerOpts } from './options'
+import { Opts, registerOpts } from './options'
+
+const fs: typeof import('fs') = (0, eval)("require('fs')")
+import semver_gte from 'semver/functions/gte'
 
 async function doesFileExist(path: string): Promise<boolean> {
     return new Promise(resolve => {
@@ -10,8 +13,6 @@ async function doesFileExist(path: string): Promise<boolean> {
             .catch(_err => resolve(false))
     })
 }
-
-const fs: typeof import('fs') = (0, eval)("require('fs')")
 
 declare global {
     var nwjsManager: CCNwjsManager
@@ -135,5 +136,14 @@ export default class CCNwjsManager implements PluginClass {
             child.unref()
             child.on('exit', resolve)
         })
+    }
+
+    /** Grabs the SDK argument from the current installation.
+     * @param version {string} If this version < current NW.js version, install this NW.js version
+     * @returns {boolean} True if no installation is needed */
+    ensureVersion(version: string): boolean {
+        if (semver_gte(process.versions.nw, version)) return true
+        this.install(version, Opts.sdk)
+        return false
     }
 }

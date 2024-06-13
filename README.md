@@ -7,8 +7,9 @@
 ### Api
 
 ```javascript
-sc.nwjsManager.install('0.35.5', /* sdk */ true)
-sc.nwjsManager.install('0.72.0', /* not sdk */ false)
+nwjsManager.install('0.35.5', /* sdk */ true)
+nwjsManager.install('0.72.0', /* not sdk */ false)
+nwjsManager.ensureVersion('0.72.0') /* if current NW.js version < 0.72.0 then install 0.72.0 */
 ```
 
 ## Building

@@ -12,12 +12,14 @@
         "@types/jquery": "^3.5.29",
         "@types/node": "^11.6.0",
         "@types/pako": "^2.0.3",
+        "@types/semver": "^7.5.8",
         "@typescript-eslint/eslint-plugin": "^6.20.0",
         "@typescript-eslint/parser": "^6.20.0",
         "ccmodmanager": "github:CCDirectLink/CCModManager",
         "esbuild": "^0.20.0",
         "eslint": "^8.56.0",
         "prettier": "3.2.4",
+        "semver": "^7.6.2",
         "typescript": "^5.3.3",
         "ultimate-crosscode-typedefs": "github:krypciak/ultimate-crosscode-typedefs"
     }
