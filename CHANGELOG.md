@@ -3,6 +3,15 @@
 # Change Log
 
 ## [Unreleased]
+
+### Added
+
+- Added aria label for screen readers that tells the user to wait
+
+### Fixed
+
+- Fixed CrossCode not starting again after install on Windows
+
 ## [1.0.3] 2024-06-13
 
 ### Added

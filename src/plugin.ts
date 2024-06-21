@@ -85,6 +85,14 @@ export default class CCNwjsManager implements PluginClass {
 
         const archivePath = `${CCNwjsManager.baseDataPath}/${archiveName}`
 
+        document.getElementById('game')!.setAttribute('aria-live', 'polite')
+        let i = 0
+        setInterval(() => {
+            const text = `Installing NW.js, please wait...${new Array(i).fill('.').join('')}`
+            console.warn(text)
+            ig.system.canvas.setAttribute('aria-label', text)
+        }, 5000)
+
         if (!(await doesFileExist(archivePath))) {
             console.log(`Downloading NW.js: ${url}`)
             const data = await (await fetch(url)).arrayBuffer()
@@ -101,7 +109,7 @@ export default class CCNwjsManager implements PluginClass {
                 await this.spawnWindowsScript(`Expand-Archive -Force ${archivePath} .`)
                 const directoryName = archiveName.substring(0, archiveName.length - '.zip'.length)
                 this.spawnWindowsScript(
-                    `cp -r -Force ${directoryName}\\* .; rm -r ${directoryName}; cp nw.exe CrossCode.exe; start ${crosscodePath}`
+                    `cp -r -Force ${directoryName}\\* .; rm -r ${directoryName}; cp nw.exe CrossCode.exe; start CrossCode.exe`
                 )
             } else throw new Error('what')
         } else if (extension == 'tar.gz') {
